@@ -23,6 +23,7 @@ ensure jko_banking
 Execute these SQL queries to create the database tables:
 
 sql-- Bank accounts table
+
 CREATE TABLE IF NOT EXISTS `bank_accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(60) NOT NULL,
@@ -36,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `bank_accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Transactions table
+
 CREATE TABLE IF NOT EXISTS `bank_transactions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `from_account_id` int(11) DEFAULT NULL,
@@ -53,6 +55,7 @@ CREATE TABLE IF NOT EXISTS `bank_transactions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Balance history table for charts
+
 CREATE TABLE IF NOT EXISTS `bank_balance_history` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_id` int(11) NOT NULL,
@@ -62,46 +65,76 @@ CREATE TABLE IF NOT EXISTS `bank_balance_history` (
   UNIQUE KEY `account_date` (`account_id`,`date`),
   KEY `account_id` (`account_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
 ⚙️ Configuration
+
 In config.lua you can modify:
 
+
 Bank and ATM locations
+
 Maximum accounts per player (default: 2)
+
 Minimum transaction amount
+
 Discord webhook for logging
+
 Map blips settings
 
+
 🎮 Usage
+
 For Players:
 
 Go to any ATM or bank location
+
 Use ox_target to interact
+
 Create accounts, deposit, withdraw, and transfer money
 
 🌍 Languages
+
 System supports English and Czech. Change in config.lua:
+
 luaConfig.Locale = 'en' -- or 'cs'
+
 📊 Features
 
+
 ✅ Multiple bank accounts per player
+
 ✅ Cash deposits and withdrawals
+
 ✅ Account-to-account transfers
+
 ✅ Transaction history with charts
+
 ✅ Discord logging
+
 ✅ Modern UI with animations
+
 ✅ Czech localization
 
 🔍 Technical Details
+
 The system automatically:
 
 Creates first account for new players
+
 Saves daily balances for chart data
+
 Logs all transactions
+
 Validates account numbers (8 digits)
 
+
 📞 Support
+
 If you find any bugs or have suggestions for improvements, contact me.
 
 Discord: Jaku6ko
+
 Author: Jakubko
+
 Version: 1.0.0
