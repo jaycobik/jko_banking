@@ -16,7 +16,7 @@ ox_inventory (for cash handling)
 Upload the resource to your resources folder
 Add to server.cfg:
 
-ensure banking_system
+ensure jko_banking
 
 Execute these SQL queries to create the database tables:
 
