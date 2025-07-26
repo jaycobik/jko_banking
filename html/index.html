@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="banking-container" id="bankingContainer">
+        <div class="header">
+            <h1 id="bankingTitle"></h1>
+            <div class="header-buttons">
+                <button class="header-btn" onclick="showDepositModal()">
+                    💰 <span id="depositBtnText"></span>
+                </button>
+                <button class="header-btn" onclick="showWithdrawModal()">
+                    💸 <span id="withdrawBtnText"></span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="sidebar">
+                <div class="logo-section">
+                    <div class="logo">LSB</div>
+                    <div class="logo-text">
+                        <h3 id="logoTitle"></h3>
+                        <p id="logoSubtitle"></p>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <h4 id="mainMenuTitle">Menu</h4>
+                    <div class="menu-item active" data-section="dashboard">
+                        <span class="menu-icon">📊</span>
+                        <span id="dashboardTitle"></span>
+                    </div>
+                    <div class="menu-item" data-section="transactions">
+                        <span class="menu-icon">🕒</span>
+                        <span id="transactionsTitle"></span>
+                    </div>
+                    <div class="menu-item" data-section="accounts">
+                        <span class="menu-icon">💳</span>
+                        <span id="accountsTitle"></span>
+                    </div>
+                </div>
+                
+                <div class="user-section">
+                    <div class="user-info">
+                        <div class="user-avatar" id="userAvatar">?</div>
+                        <div class="user-details">
+                            <h4 id="userName"></h4>
+                            <p id="userJob"></p>
+                        </div>
+                    </div>
+                    <button class="logout-btn" onclick="closeBanking()">
+                        <span>🚪</span>
+                        <span id="closeBtnText"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <!-- Dashboard Section -->
+                <div id="dashboard-section" class="content-section">
+                    <div class="dashboard-grid">
+                        <div class="info-card">
+                            <div class="card-header">
+                                <span class="card-title" id="mainAccountLabel"></span>
+                            </div>
+                            <div class="card-value" id="bankBalance">$ 0</div>
+                            <div class="card-subtitle" id="mainAccountBalanceLabel"></div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="card-header">
+                                <span class="card-title" id="cashLabel"></span>
+                            </div>
+                            <div class="card-value" id="cashAmount">$ 0</div>
+                            <div class="card-subtitle" id="availableMoneyLabel"></div>
+                        </div>
+                        
+                        <div class="info-card iban-card">
+                            <div class="card-header">
+                                <span class="card-title">IBAN</span>
+                            </div>
+                            <div class="card-value" id="accountNumber"></div>
+                            <div class="card-subtitle" id="mainAccountNumberLabel"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nové dashboard karty -->
+                    <div class="dashboard-secondary-grid">
+                        <div class="info-card stats-card">
+                            <div class="card-header">
+                                <span class="card-title" id="accountsCountLabel"></span>
+                                <span>📊</span>
+                            </div>
+                            <div class="card-value" id="accountsCount">0</div>
+                            <div class="card-subtitle" id="activeAccountsLabel"></div>
+                        </div>
+                        
+                        <div class="info-card stats-card">
+                            <div class="card-header">
+                                <span class="card-title" id="weeklyTransactionsLabel"></span>
+                                <span>📈</span>
+                            </div>
+                            <div class="card-value" id="weeklyTransactions">0</div>
+                            <div class="card-subtitle" id="weeklyTransactionsDescLabel"></div>
+                        </div>
+                        
+                        <div class="info-card stats-card">
+                            <div class="card-header">
+                                <span class="card-title" id="weeklyBalanceLabel"></span>
+                                <span id="weeklyBalanceIcon">💎</span>
+                            </div>
+                            <div class="card-value" id="weeklyBalance">$ 0</div>
+                            <div class="card-subtitle" id="weeklyBalanceDescLabel"></div>
+                        </div>
+                    </div>
+
+                    <!-- Graf zůstatku -->
+                    <div class="balance-chart-section">
+                        <div class="section-header">
+                            <h3 class="section-title" id="balanceHistoryLabel"></h3>
+                            <p class="section-subtitle" id="balanceHistoryDescLabel"></p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="balanceChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="transactions-section">
+                        <div class="section-header">
+                            <div>
+                                <div class="section-title" id="recentTransactionsLabel"></div>
+                                <div class="section-subtitle" id="recentTransactionsDescLabel"></div>
+                            </div>
+                        </div>
+                        <div id="recentTransactions">
+                            <div style="text-align: center; padding: 40px; color: #a0aec0;" id="noRecentTransactionsText">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Transactions Section -->
+                <div id="transactions-section" class="content-section hidden">
+                    <div class="transactions-section">
+                        <div class="section-header">
+                            <div>
+                                <div class="section-title" id="transactionHistoryLabel"></div>
+                                <div class="section-subtitle" id="transactionHistoryDescLabel"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="accounts-dropdown-container">
+                            <label class="form-label" id="selectAccountTransactionsLabel"></label>
+                            <div class="accounts-dropdown" id="transactionAccountSelect">
+                                <div class="dropdown-selected" id="selectAccountDropdownText"></div>
+                                <div class="dropdown-arrow">▼</div>
+                                <div class="dropdown-options" id="transactionAccountOptions">
+                                    <!-- Options will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="transactionHistory">
+                            <div style="text-align: center; padding: 40px; color: #a0aec0;" id="selectAccountTransactionsText">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accounts Section -->
+                <div id="accounts-section" class="content-section hidden">
+                    <div class="transactions-section">
+                        <div class="section-header">
+                            <div>
+                                <div class="section-title" id="accountManagementLabel"></div>
+                                <div class="section-subtitle" id="accountManagementDescLabel"></div>
+                            </div>
+                            <div class="new-account-btn-container">
+                                <button class="btn btn-primary new-account-btn" onclick="showCreateAccountModal()">
+                                    + <span id="newAccountBtnText"></span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="accountsList">
+                            <!-- Accounts will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deposit Modal -->
+    <div class="modal" id="depositModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="depositModalTitle"></div>
+                <div class="modal-subtitle" id="depositModalSubtitle"></div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="selectAccountLabel1"></label>
+                <select class="form-input" id="depositAccountSelect">
+                    <option value="" id="selectAccountOption1"></option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="amountLabel1"></label>
+                <input type="number" class="form-input" id="depositAmount" min="1">
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeDepositModal()" id="cancelBtn1"></button>
+                <button class="btn btn-primary" onclick="makeDeposit()" id="depositBtn1"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Withdraw Modal -->
+    <div class="modal" id="withdrawModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="withdrawModalTitle"></div>
+                <div class="modal-subtitle" id="withdrawModalSubtitle"></div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="selectAccountLabel2"></label>
+                <select class="form-input" id="withdrawAccountSelect">
+                    <option value="" id="selectAccountOption2"></option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="amountLabel2"></label>
+                <input type="number" class="form-input" id="withdrawAmount" min="1">
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeWithdrawModal()" id="cancelBtn2"></button>
+                <button class="btn btn-primary" onclick="makeWithdraw()" id="withdrawBtn2"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transfer Modal -->
+    <div class="modal" id="transferModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="transferModalTitle"></div>
+                <div class="modal-subtitle" id="transferModalSubtitle"></div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="fromAccountLabel"></label>
+                <select class="form-input" id="transferFromSelect">
+                    <option value="" id="selectSourceAccountOption"></option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="targetAccountNumberLabel"></label>
+                <input type="text" class="form-input" id="transferToAccount">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="amountLabel3"></label>
+                <input type="number" class="form-input" id="transferAmount" min="1">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="noteOptionalLabel"></label>
+                <input type="text" class="form-input" id="transferDescription">
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeTransferModal()" id="cancelBtn3"></button>
+                <button class="btn btn-primary" onclick="makeTransfer()" id="transferBtn"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Account Modal -->
+    <div class="modal" id="createAccountModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="createAccountModalTitle"></div>
+                <div class="modal-subtitle" id="createAccountModalSubtitle"></div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label" id="accountNameLabel"></label>
+                <input type="text" class="form-input" id="newAccountName">
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeCreateAccountModal()" id="cancelBtn4"></button>
+                <button class="btn btn-primary" onclick="createAccount()" id="createBtn"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div class="modal" id="deleteAccountModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="deleteAccountModalTitle"></div>
+                <div class="modal-subtitle" id="deleteAccountModalSubtitle"></div>
+            </div>
+            
+            <div style="padding: 20px; background: #2d3748; border-radius: 8px; margin-bottom: 20px;">
+                <div style="color: #e2e8f0; font-weight: 500;" id="deleteAccountName">Název účtu</div>
+                <div style="color: #a0aec0; font-size: 12px;" id="deleteAccountNumber">#12345678</div>
+                <div style="color: #f56565; font-size: 14px; margin-top: 8px;" id="deleteAccountWarning"></div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeDeleteAccountModal()" id="cancelBtn5"></button>
+                <button class="btn btn-danger" onclick="confirmDeleteAccount()" id="deleteBtn"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

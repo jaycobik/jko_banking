@@ -1,0 +1,180 @@
+Locales['en'] = {
+    -- UI General
+    ['banking_title'] = 'Los Santos Bank',
+    ['online_bank'] = 'Online Banking',
+    ['close'] = 'Close',
+    ['cancel'] = 'Cancel',
+    ['confirm'] = 'Confirm',
+    ['create'] = 'Create',
+    ['delete'] = 'Delete',
+    ['transfer'] = 'Transfer',
+    ['processing'] = 'Processing...',
+    ['creating'] = 'Creating...',
+    ['deleting'] = 'Deleting...',
+    ['loading'] = 'Loading...',
+    ['unknown'] = 'Unknown',
+    ['select_account'] = 'Select Account',
+    ['menu_title'] = 'Main Menu',
+    
+    -- Header buttons
+    ['deposit_btn'] = 'Deposit',
+    ['withdraw_btn'] = 'Withdraw',
+    
+    -- Menu items
+    ['menu_dashboard'] = 'Dashboard',
+    ['menu_transactions'] = 'Transactions',
+    ['menu_accounts'] = 'Accounts',
+    
+    -- Dashboard
+    ['main_account'] = 'Main Account',
+    ['cash'] = 'Cash',
+    ['main_account_balance'] = 'Main Account Balance',
+    ['available_money'] = 'Available Money',
+    ['main_account_number'] = 'Main Account Number',
+    ['accounts_count'] = 'Account Count',
+    ['active_accounts'] = 'Active Accounts',
+    ['weekly_transactions'] = 'Weekly Transactions',
+    ['weekly_transactions_desc'] = 'Main Account - This Week',
+    ['weekly_balance'] = 'Weekly Balance',
+    ['weekly_balance_desc'] = 'Profit/Loss This Week',
+    ['balance_history'] = 'Balance History',
+    ['balance_history_desc'] = 'Last 7 Days',
+    ['recent_transactions'] = 'Recent Main Account Transactions',
+    ['recent_transactions_desc'] = '5 Most Recent Transactions from Your Main Account',
+    ['no_recent_transactions'] = 'No Recent Transactions',
+    
+    -- Transactions
+    ['transaction_history'] = 'Transaction History',
+    ['transaction_history_desc'] = 'Transactions for Specific Account',
+    ['select_account_transactions'] = 'Select Account to View Transactions',
+    ['no_transactions'] = 'No Transactions to Display',
+    
+    -- Accounts
+    ['account_management'] = 'Account Management',
+    ['account_management_desc'] = 'Your Bank Accounts (max. 2)',
+    ['new_account'] = 'New Account',
+    
+    -- Modals
+    ['deposit_title'] = 'Cash Deposit',
+    ['deposit_subtitle'] = 'Deposit Cash to Your Bank Account',
+    ['withdraw_title'] = 'Cash Withdrawal',
+    ['withdraw_subtitle'] = 'Withdraw Cash from Your Account',
+    ['transfer_title'] = 'Money Transfer',
+    ['transfer_subtitle'] = 'Send Money to Another Account',
+    ['create_account_title'] = 'Create New Account',
+    ['create_account_subtitle'] = 'Create Another Bank Account (max. 2)',
+    ['delete_account_title'] = 'Delete Account',
+    ['delete_account_subtitle'] = 'Are You Sure You Want to Delete This Account?',
+    ['delete_account_warning'] = 'This Action is Irreversible!',
+    
+    -- Form labels
+    ['amount'] = 'Amount',
+    ['enter_amount'] = 'Enter Amount',
+    ['from_account'] = 'From Account',
+    ['select_source_account'] = 'Select Source Account',
+    ['target_account_number'] = 'Target Account Number',
+    ['enter_account_number'] = 'Enter Account Number',
+    ['note_optional'] = 'Note (Optional)',
+    ['transfer_description'] = 'Transfer Description',
+    ['account_name'] = 'Account Name',
+    ['enter_account_name'] = 'Enter Account Name',
+    
+    -- Target labels
+    ['use_atm'] = 'Use ATM',
+    ['use_bank'] = 'Use Bank',
+    ['bank_legion_square'] = 'Open Bank - Legion Square',
+    ['bank_great_ocean'] = 'Open Bank - Great Ocean Highway',
+    ['bank_blip'] = 'Bank',
+    
+    -- Transaction types
+    ['cash_deposit'] = 'Cash Deposit',
+    ['cash_withdrawal'] = 'Cash Withdrawal',
+    ['incoming_transfer'] = 'Incoming Transfer',
+    ['outgoing_transfer'] = 'Outgoing Transfer',
+    ['unknown_transaction'] = 'Unknown Transaction',
+    
+    -- User info
+    ['unemployed'] = 'Unemployed',
+    ['no_job'] = 'No Job',
+    ['unknown_player'] = 'Unknown Player',
+    
+    -- Success messages
+    ['deposit_success'] = 'Successfully deposited $%s',
+    ['withdraw_success'] = 'Successfully withdrew $%s',
+    ['transfer_success'] = 'Successfully transferred $%s to account %s',
+    ['account_created'] = 'Account successfully created',
+    ['account_deleted'] = 'Account successfully deleted',
+    ['bank_blips_refreshed'] = 'Bank blips have been refreshed',
+    
+    -- Error messages
+    ['player_error'] = 'Player Error',
+    ['invalid_amount'] = 'Invalid Amount',
+    ['min_transaction_amount'] = 'Minimum transaction amount is $%s',
+    ['insufficient_cash'] = 'Insufficient cash',
+    ['account_not_found'] = 'Account not found',
+    ['insufficient_balance'] = 'Insufficient account balance',
+    ['cash_error'] = 'Error removing cash',
+    ['withdraw_error'] = 'Withdrawal error',
+    ['enter_target_account'] = 'Enter target account number',
+    ['invalid_account_format'] = 'Invalid account number format (must be 8 digits)',
+    ['source_account_not_found'] = 'Source account not found',
+    ['insufficient_source_balance'] = 'Insufficient source account balance',
+    ['target_account_not_found'] = 'Target account not found',
+    ['same_account_transfer'] = 'Cannot transfer money to the same account',
+    ['transfer_error'] = 'Money transfer error',
+    ['max_accounts_reached'] = 'Maximum number of accounts is %d',
+    ['account_name_too_short'] = 'Account name must be at least 3 characters',
+    ['account_name_too_long'] = 'Account name can be maximum 30 characters',
+    ['account_creation_error'] = 'Account creation error',
+    ['account_has_balance'] = 'Cannot delete account with non-zero balance',
+    ['cannot_delete_last_account'] = 'Cannot delete last account',
+    ['account_deletion_error'] = 'Account deletion error',
+    ['data_loading_error'] = 'Data loading error',
+    ['data_update_error'] = 'Data update error',
+    ['connection_interrupted'] = 'Connection to bank interrupted',
+    ['transaction_loading_error'] = 'Transaction loading error',
+    
+    -- Command descriptions
+    ['refresh_blips_desc'] = 'Refresh bank blips (useful for testing)',
+    
+    -- Discord logs
+    ['discord_new_player'] = '🆕 New Player',
+    ['discord_new_player_desc'] = 'Player %s received their first bank account',
+    ['discord_cash_deposit'] = '💰 Cash Deposit',
+    ['discord_deposit_desc'] = 'Player deposited $%s to their account',
+    ['discord_cash_withdrawal'] = '💸 Cash Withdrawal',
+    ['discord_withdrawal_desc'] = 'Player withdrew $%s from their account',
+    ['discord_money_transfer'] = '📤 Money Transfer',
+    ['discord_transfer_desc'] = 'Player transferred $%s to another account',
+    ['discord_new_account'] = '🆕 New Account',
+    ['discord_new_account_desc'] = 'Player created a new bank account',
+    ['discord_account_deleted'] = '🗑️ Account Deletion',
+    ['discord_account_deleted_desc'] = 'Player deleted their bank account',
+    ['discord_system_start'] = '🚀 Banking System',
+    ['discord_system_start_desc'] = 'Banking system successfully started on server',
+    ['discord_system_stop'] = '🛑 Banking System',
+    ['discord_system_stop_desc'] = 'Banking system stopped/restarted',
+    
+    -- Discord fields
+    ['discord_player'] = 'Player',
+    ['discord_amount'] = 'Amount',
+    ['discord_account'] = 'Account',
+    ['discord_new_balance'] = 'New Balance',
+    ['discord_account_number'] = 'Account Number',
+    ['discord_identifier'] = 'Identifier',
+    ['discord_sender'] = 'Sender',
+    ['discord_recipient'] = 'Recipient',
+    ['discord_from_account'] = 'From Account',
+    ['discord_to_account'] = 'To Account',
+    ['discord_account_name'] = 'Account Name',
+    ['discord_server'] = 'Server',
+    ['discord_start_time'] = 'Start Time',
+    ['discord_stop_time'] = 'Stop Time',
+    ['discord_unknown_server'] = 'Unknown Server',
+    ['discord_unknown_player'] = 'Unknown Player',
+    
+    -- Additional translations
+    ['balance_chart'] = 'Balance',
+    ['daily_balances_saved'] = 'Daily balances saved',
+    ['current_balances_saved'] = 'Current balances saved on startup',
+}

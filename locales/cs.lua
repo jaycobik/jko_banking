@@ -1,0 +1,180 @@
+Locales['cs'] = {
+    -- UI General
+    ['banking_title'] = 'Los Santos Banka',
+    ['online_bank'] = 'Online Banka',
+    ['close'] = 'Zavřít',
+    ['cancel'] = 'Zrušit',
+    ['confirm'] = 'Potvrdit',
+    ['create'] = 'Vytvořit',
+    ['delete'] = 'Smazat',
+    ['transfer'] = 'Převést',
+    ['processing'] = 'Zpracovávám...',
+    ['creating'] = 'Vytvářím...',
+    ['deleting'] = 'Mažu...',
+    ['loading'] = 'Načítám...',
+    ['unknown'] = 'Neznámý',
+    ['select_account'] = 'Vyberte účet',
+    ['menu_title'] = 'Hlavní menu',
+    
+    -- Header buttons
+    ['deposit_btn'] = 'Vložit',
+    ['withdraw_btn'] = 'Vybrat',
+    
+    -- Menu items
+    ['menu_dashboard'] = 'Dashboard',
+    ['menu_transactions'] = 'Transakce',
+    ['menu_accounts'] = 'Účty',
+    
+    -- Dashboard
+    ['main_account'] = 'Hlavní účet',
+    ['cash'] = 'Hotovost',
+    ['main_account_balance'] = 'Zůstatek hlavního účtu',
+    ['available_money'] = 'Dostupné peníze',
+    ['main_account_number'] = 'Číslo hlavního účtu',
+    ['accounts_count'] = 'Počet účtů',
+    ['active_accounts'] = 'Aktivní účty',
+    ['weekly_transactions'] = 'Týdenní transakce',
+    ['weekly_transactions_desc'] = 'Hlavní účet - tento týden',
+    ['weekly_balance'] = 'Týdenní bilance',
+    ['weekly_balance_desc'] = 'Zisk/ztráta za týden',
+    ['balance_history'] = 'Historie zůstatku',
+    ['balance_history_desc'] = 'Posledních 7 dní',
+    ['recent_transactions'] = 'Poslední transakce hlavního účtu',
+    ['recent_transactions_desc'] = '5 nejnovějších transakcí z vašeho hlavního účtu',
+    ['no_recent_transactions'] = 'Žádné nedávné transakce',
+    
+    -- Transactions
+    ['transaction_history'] = 'Historie transakcí',
+    ['transaction_history_desc'] = 'Transakce konkrétního účtu',
+    ['select_account_transactions'] = 'Vyberte účet pro zobrazení transakcí',
+    ['no_transactions'] = 'Žádné transakce k zobrazení',
+    
+    -- Accounts
+    ['account_management'] = 'Správa účtů',
+    ['account_management_desc'] = 'Vaše bankovní účty (max. 2)',
+    ['new_account'] = 'Nový účet',
+    
+    -- Modals
+    ['deposit_title'] = 'Vklad hotovosti',
+    ['deposit_subtitle'] = 'Vložte hotovost na svůj bankovní účet',
+    ['withdraw_title'] = 'Výběr hotovosti',
+    ['withdraw_subtitle'] = 'Vyberte hotovost ze svého účtu',
+    ['transfer_title'] = 'Převod peněz',
+    ['transfer_subtitle'] = 'Pošlete peníze na jiný účet',
+    ['create_account_title'] = 'Vytvořit nový účet',
+    ['create_account_subtitle'] = 'Založte si další bankovní účet (max. 2)',
+    ['delete_account_title'] = 'Smazat účet',
+    ['delete_account_subtitle'] = 'Opravdu chcete smazat tento účet?',
+    ['delete_account_warning'] = 'Tato akce je nevratná!',
+    
+    -- Form labels
+    ['amount'] = 'Částka',
+    ['enter_amount'] = 'Zadejte částku',
+    ['from_account'] = 'Ze účtu',
+    ['select_source_account'] = 'Vyberte zdrojový účet',
+    ['target_account_number'] = 'Číslo cílového účtu',
+    ['enter_account_number'] = 'Zadejte číslo účtu',
+    ['note_optional'] = 'Poznámka (volitelné)',
+    ['transfer_description'] = 'Popis převodu',
+    ['account_name'] = 'Název účtu',
+    ['enter_account_name'] = 'Zadejte název účtu',
+    
+    -- Target labels
+    ['use_atm'] = 'Použít bankomat',
+    ['use_bank'] = 'Použít banku',
+    ['bank_legion_square'] = 'Otevřít banku - Legion Square',
+    ['bank_great_ocean'] = 'Otevřít banku - Great Ocean Highway',
+    ['bank_blip'] = 'Banka',
+    
+    -- Transaction types
+    ['cash_deposit'] = 'Vklad hotovosti',
+    ['cash_withdrawal'] = 'Výběr hotovosti',
+    ['incoming_transfer'] = 'Příchozí převod',
+    ['outgoing_transfer'] = 'Odchozí převod',
+    ['unknown_transaction'] = 'Neznámá transakce',
+    
+    -- User info
+    ['unemployed'] = 'Nezaměstnaný',
+    ['no_job'] = 'Bez zaměstnání',
+    ['unknown_player'] = 'Neznámý hráč',
+    
+    -- Success messages
+    ['deposit_success'] = 'Úspěšně jste vložili %s$',
+    ['withdraw_success'] = 'Úspěšně jste vybrali %s$',
+    ['transfer_success'] = 'Úspěšně jste převedli %s$ na účet %s',
+    ['account_created'] = 'Účet byl úspěšně vytvořen',
+    ['account_deleted'] = 'Účet byl úspěšně smazán',
+    ['bank_blips_refreshed'] = 'Bank blipy byly obnoveny',
+    
+    -- Error messages
+    ['player_error'] = 'Chyba hráče',
+    ['invalid_amount'] = 'Neplatná částka',
+    ['min_transaction_amount'] = 'Minimální částka pro transakci je %s$',
+    ['insufficient_cash'] = 'Nemáte dostatek hotovosti',
+    ['account_not_found'] = 'Účet nenalezen',
+    ['insufficient_balance'] = 'Nedostatečný zůstatek na účtu',
+    ['cash_error'] = 'Chyba při odebírání hotovosti',
+    ['withdraw_error'] = 'Chyba při výběru',
+    ['enter_target_account'] = 'Zadejte číslo cílového účtu',
+    ['invalid_account_format'] = 'Neplatný formát čísla účtu (musí obsahovat 8 číslic)',
+    ['source_account_not_found'] = 'Zdrojový účet nenalezen',
+    ['insufficient_source_balance'] = 'Nedostatečný zůstatek na zdrojovém účtu',
+    ['target_account_not_found'] = 'Cílový účet nenalezen',
+    ['same_account_transfer'] = 'Nelze převést peníze na stejný účet',
+    ['transfer_error'] = 'Chyba při převodu peněz',
+    ['max_accounts_reached'] = 'Maximální počet účtů je %d',
+    ['account_name_too_short'] = 'Název účtu musí mít alespoň 3 znaky',
+    ['account_name_too_long'] = 'Název účtu může mít maximálně 30 znaků',
+    ['account_creation_error'] = 'Chyba při vytváření účtu',
+    ['account_has_balance'] = 'Nelze smazat účet s nenulový zůstatkem',
+    ['cannot_delete_last_account'] = 'Nelze smazat poslední účet',
+    ['account_deletion_error'] = 'Chyba při mazání účtu',
+    ['data_loading_error'] = 'Chyba při načítání dat',
+    ['data_update_error'] = 'Chyba při aktualizaci dat',
+    ['connection_interrupted'] = 'Spojení s bankou bylo přerušeno',
+    ['transaction_loading_error'] = 'Chyba při načítání transakcí',
+    
+    -- Command descriptions
+    ['refresh_blips_desc'] = 'Obnovit bank blipy (užitečné při testování)',
+    
+    -- Discord logs
+    ['discord_new_player'] = '🆕 Nový hráč',
+    ['discord_new_player_desc'] = 'Hráč %s dostal svůj první bankovní účet',
+    ['discord_cash_deposit'] = '💰 Vklad hotovosti',
+    ['discord_deposit_desc'] = 'Hráč vložil %s$ na svůj účet',
+    ['discord_cash_withdrawal'] = '💸 Výběr hotovosti',
+    ['discord_withdrawal_desc'] = 'Hráč vybral %s$ ze svého účtu',
+    ['discord_money_transfer'] = '📤 Převod peněz',
+    ['discord_transfer_desc'] = 'Hráč převedl %s$ na jiný účet',
+    ['discord_new_account'] = '🆕 Nový účet',
+    ['discord_new_account_desc'] = 'Hráč si vytvořil nový bankovní účet',
+    ['discord_account_deleted'] = '🗑️ Smazání účtu',
+    ['discord_account_deleted_desc'] = 'Hráč smazal svůj bankovní účet',
+    ['discord_system_start'] = '🚀 Banking System',
+    ['discord_system_start_desc'] = 'Banking systém byl úspěšně spuštěn na serveru',
+    ['discord_system_stop'] = '🛑 Banking System',
+    ['discord_system_stop_desc'] = 'Banking systém byl zastaven/restartován',
+    
+    -- Discord fields
+    ['discord_player'] = 'Hráč',
+    ['discord_amount'] = 'Částka',
+    ['discord_account'] = 'Účet',
+    ['discord_new_balance'] = 'Nový zůstatek',
+    ['discord_account_number'] = 'Číslo účtu',
+    ['discord_identifier'] = 'Identifier',
+    ['discord_sender'] = 'Odesílatel',
+    ['discord_recipient'] = 'Příjemce',
+    ['discord_from_account'] = 'Ze účtu',
+    ['discord_to_account'] = 'Na účet',
+    ['discord_account_name'] = 'Název účtu',
+    ['discord_server'] = 'Server',
+    ['discord_start_time'] = 'Čas spuštění',
+    ['discord_stop_time'] = 'Čas zastavení',
+    ['discord_unknown_server'] = 'Neznámý server',
+    ['discord_unknown_player'] = 'Neznámý hráč',
+    
+    -- Additional translations
+    ['balance_chart'] = 'Zůstatek',
+    ['daily_balances_saved'] = 'Denní zůstatky byly uloženy',
+    ['current_balances_saved'] = 'Aktuální zůstatky byly uloženy při startu',
+}
