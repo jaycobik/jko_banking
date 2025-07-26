@@ -1,4 +1,4 @@
-<img width="1452" height="836" alt="image" src="https://github.com/user-attachments/assets/b398cf31-d048-46b4-b42d-aac96481329b" />
+<img width="1205" height="708" alt="image" src="https://github.com/user-attachments/assets/bead1bd9-c05f-4f2b-8fdf-75f27c5fc5ea" />
 
 
 JKO_BANKING
