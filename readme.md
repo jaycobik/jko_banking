@@ -4,25 +4,34 @@
 
 
 JKO_BANKING
+
 Modern banking system for FiveM servers with multi-account support, transfers, and Czech localization.
+
 📋 Requirements
 
 ESX Framework
+
 oxmysql
+
 ox_target
+
 ox_lib
+
 ox_inventory (for cash handling)
 
 🔧 Installation
 
 Upload the resource to your resources folder
+
 Add to server.cfg:
 
 ensure jko_banking
 
 Execute these SQL queries to create the database tables:
 
-sql-- Bank accounts table
+sql
+
+-- Bank accounts table
 
 CREATE TABLE IF NOT EXISTS `bank_accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
